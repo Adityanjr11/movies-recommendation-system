@@ -1,28 +1,11 @@
-🎬 Movie Recommendation System
-A content-based movie recommendation engine built with Python, NLTK, and Streamlit. This project uses natural language processing to suggest movies based on tags, genres, and overviews from a Kaggle dataset.
-
-📌 Project Overview
-The goal of this project is to recommend the top 5 most similar movies to a user-selected title.
-
-Preprocessing: Done in Jupyter Notebooks for data exploration and cleaning.
-
-NLP: Utilizes NLTK for text preprocessing (Stemming).
-
-Model: Cosine Similarity is used to calculate the distance between movie vectors.
-
-Frontend: A sleek web interface built with Streamlit.
-
-🛠️ Tech Stack
-IDE: PyCharm
-
-Notebooks: Jupyter Notebook (for EDA and Model Building)
-
-Language: Python 3.x
-
-Web Framework: Streamlit
-
-NLP Library: NLTK
-
-Data Libraries: Pandas, Scikit-learn, Pickle
-
-Dataset: TMDB 5000 Movie Dataset (Kaggle)
+🎬 Movie Recommendation SystemA content-based recommendation engine developed using NLP and Machine Learning. This project transitions from data exploration in Jupyter to a production-ready web interface using Streamlit and PyCharm.Getty Images Explore 📌 Project OverviewThe system analyzes movie metadata (genres, keywords, cast, and crew) to find similarities between films. It transforms text data into vectors and calculates the mathematical "distance" between them to suggest the most relevant content.Dataset: TMDB 5,000 Movie Dataset (Kaggle).Algorithm: Cosine Similarity.NLP: Stemming and Vectorization.🛠️ Tech StackComponentTool / LibraryLanguagePython 3.xIDEPyCharmEnvironmentJupyter NotebookNLPNLTK (Natural Language Toolkit)ML LibrariesPandas, Scikit-learn, NumPyFrontendStreamlit🏗️ Workflow1. Data Exploration (Jupyter)Loaded datasets from Kaggle.Merged movies and credits dataframes.Cleaned missing values and duplicated entries.2. Natural Language Processing (NLTK)Tagging: Concatenated genres, keywords, overview, cast, and crew into a single tags column.Stemming: Used PorterStemmer from NLTK to reduce words to their root form (e.g., "activities" → "activ").Vectorization: Converted text to 5,000-dimensional vectors using CountVectorizer (Bag of Words).3. Model BuildingCalculated Cosine Similarity scores between all movie vectors.Exported the similarity matrix and movie list as .pkl (Pickle) files for the web app.🚀 Installation & Usage1. Clone the RepoBashgit clone https://github.com/your-username/movie-recommender.git
+cd movie-recommender
+2. Install DependenciesBashpip install -r requirements.txt
+3. Run the ApplicationOpen your terminal in PyCharm and run:Bashstreamlit run app.py
+📂 Folder StructurePlaintext├── dataset/             # Raw CSV files from Kaggle
+├── notebooks/           # Jupyter notebook for model training
+├── models/              # Pickle files (similarity.pkl, movie_dict.pkl)
+├── app.py               # Streamlit application code
+├── requirements.txt     # List of dependencies
+└── README.md            # Project documentation
+🌟 Future Enhancements[ ] Integrate TMDB API to fetch and display movie posters.[ ] Implement Collaborative Filtering based on user ratings.[ ] Deploy the app using Streamlit Cloud or Heroku.
