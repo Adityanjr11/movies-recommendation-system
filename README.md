@@ -1,45 +1,47 @@
-🎬 Movie Recommendation System
-📌 Overview
-A content-based recommendation engine built with Python and Streamlit. It suggests movies by analyzing metadata like genres, cast, and crew from a Kaggle dataset.
+# 🎬 Movie Recommendation System
 
-🛠️ Tech Stack
-IDE: PyCharm
+A content-based movie recommendation engine built with **Python**, **NLTK**, and **Streamlit**. This project takes raw data from Kaggle and transforms it into a functional web application.
 
-Analysis: Jupyter Notebook
+---
 
-NLP: NLTK (PorterStemmer)
+## 📌 Overview
 
-Web App: Streamlit
+This system recommends movies by calculating the similarity between movie tags (genres, cast, crew, and overview). 
 
-ML: Scikit-learn (Cosine Similarity)
+* **Dataset:** [TMDB 5000 Movies](https://www.kaggle.com/tmdb/tmdb-movie-metadata)
+* **Logic:** Natural Language Processing (NLP)
+* **Metric:** Cosine Similarity
 
-🚀 How to Run
-Install Requirements:
 
-Bash
 
-pip install pandas streamlit nltk scikit-learn
-Prepare the Data: Run your Jupyter Notebook to generate movie_dict.pkl and similarity.pkl.
+---
 
-Launch the App:
+## 🛠️ Tech Stack
 
-Bash
+| Tool | Purpose |
+| :--- | :--- |
+| **Python** | Primary programming language |
+| **Jupyter** | Data cleaning and model prototyping |
+| **PyCharm** | Application development |
+| **NLTK** | Text stemming and preprocessing |
+| **Streamlit** | Web UI framework |
 
-streamlit run app.py
-🧠 Logic Flow
-Data Cleaning: Merge datasets and remove nulls.
+---
 
-Preprocessing: Create a tags column using keywords and overviews.
+## ⚙️ How It Works
 
-Vectorization: Use CountVectorizer to turn text into numbers.
+1. **Data Cleaning:** Merged datasets and handled missing values in Jupyter.
+2. **Text Processing:** Used **NLTK PorterStemmer** to reduce words to their roots (e.g., 'dancing' to 'danc').
+3. **Vectorization:** Converted text into 5000-dimensional vectors using `CountVectorizer`.
+4. **Similarity:** Calculated the **Cosine Similarity** (angle between vectors) to find the closest matches.
 
-Similarity: Use Cosine Similarity to find the "distance" between movies.
 
-📂 File Structure
-app.py - The Streamlit frontend.
 
-recommender.ipynb - Data processing logic.
+---
 
-requirements.txt - List of libraries.
+## 🚀 Execution
 
-movie_dict.pkl - Processed movie data.
+### 1. Requirements
+Install the necessary libraries:
+```bash
+pip install streamlit pandas nltk scikit-learn
